@@ -1,7 +1,9 @@
 package com.nasa.landslide360;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
@@ -110,7 +112,36 @@ public class ShowLocationActivity extends Activity implements LocationListener {
 
   @Override
   public void onProviderDisabled(String provider) {
-    Toast.makeText(this, "Disabled provider " + provider,
-        Toast.LENGTH_SHORT).show();
+	  
+	  
+	  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+			  ShowLocationActivity.this);
+
+			// set title
+			alertDialogBuilder.setTitle("No Location");
+
+			// set dialog message
+			alertDialogBuilder
+				.setMessage("You do not have Location Service Enabled. Enable and try again")
+				.setCancelable(false)
+				.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog,int id) {
+						
+						finish();
+					}
+				  }
+				);
+
+				// create alert dialog
+				AlertDialog alertDialog = alertDialogBuilder.create();
+
+				// show it
+				alertDialog.show();
+	  
+	  
+	  
+	  
+   /* Toast.makeText(this, "Disabled provider. Please Enable Location " + provider,
+        Toast.LENGTH_SHORT).show();*/
   }
 } 
