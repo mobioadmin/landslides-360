@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     android:weightSum="2"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        
+        android:orientation="vertical"
+        android:layout_weight="1"
+        
+         >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/topimage" />
+
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        
+        android:orientation="vertical"
+     android:layout_weight="1"
+      android:weightSum="2"
+         >
+         <Button
+        android:id="@+id/bt_show_land"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bt_report"
+        android:layout_centerHorizontal="true"
+        android:text="Show Land Slide" 
+       
+        android:layout_weight="1"
+         android:background="#9f3f33"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/bt_report"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignLeft="@+id/bt_show_land"
+        android:layout_alignParentBottom="true"
+        android:background="#c49357"
+        android:layout_weight="1"
+        android:text="Report Land Slide"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+         
+    </LinearLayout>
+
+</LinearLayout>
